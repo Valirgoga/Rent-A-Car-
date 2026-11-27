@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RentDrive | Makinat</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Navigimi kryesor">
+        <a class="logo" href="index.html">Rent<span>Drive</span></a
+        ><button class="menu-toggle" type="button" onclick="ndryshoMenyne()">
+          ☰
+        </button>
+        <div class="nav-links">
+          <a href="index.html">Ballina</a>
+          <a class="active" href="veturat.html">Makinat</a>
+          <a href="rrethnesh.html">Rreth Nesh</a>
+          <a href="kontakt.html">Kontakti</a>
+          <a href="login.html">Kyçu</a>
+          <a class="nav-register" href="register.html">Regjistrohu</a>
+        </div>
+      </nav>
+    </header>
+    <main class="container page-main">
+      <section class="page-intro">
+        <p class="eyebrow">FLETA E MAKINAVE</p>
+        <h1>Zgjedh makinën tënde</h1>
+        <p class="muted">Shfleto ofertat dhe gjej modelin që të përshtatet.</p>
+      </section>
+      <div class="filter-row">
+        <label for="car-filter">Filtro sipas kategorisë</label
+        ><select id="car-filter" onchange="filtroMakinat()">
+          <option value="all">Të gjitha</option>
+          <option value="sedan">Sedan</option>
+          <option value="suv">SUV</option>
+          <option value="sport">Sport</option>
+        </select>
+      </div>
+      <section class="car-grid" id="all-cars">
+        <article class="car-card" data-category="sedan">
+          <img
+            src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80"
+            alt="Mercedes-Benz C-Class"
+          />
+          <div class="car-info">
+            <div>
+              <h2>Mercedes-Benz C-Class</h2>
+              <p class="muted">Automatik · Naftë · 5 ulëse</p>
+            </div>
+            <strong>55€ <small>/ ditë</small></strong>
+          </div>
+          <button
+            class="btn btn-primary full book-car"
+            onclick="rezervoMakinen('mercedes')"
+          >
+            Rezervo
+          </button>
+        </article>
+        <article class="car-card" data-category="sedan">
+          <img
+            src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80"
+            alt="BMW Seria 3"
+          />
+          <div class="car-info">
+            <div>
+              <h2>BMW Seria 3</h2>
+              <p class="muted">Automatik · Naftë · 5 ulëse</p>
+            </div>
+            <strong>50€ <small>/ ditë</small></strong>
+          </div>
+          <button
+            class="btn btn-primary full book-car"
+            onclick="rezervoMakinen('bmw3')"
+          >
+            Rezervo
+          </button>
+        </article>
+        <article class="car-card" data-category="suv">
+          <img
+            src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80"
+            alt="SUV modern"
+          />
+          <div class="car-info">
+            <div>
+              <h2>Range Rover Evoque</h2>
+              <p class="muted">Automatik · Naftë · 5 ulëse</p>
+            </div>
+            <strong>75€ <small>/ ditë</small></strong>
+          </div>
+          <button
+            class="btn btn-primary full book-car"
+            onclick="rezervoMakinen('range-rover')"
+          >
+            Rezervo
+          </button>
+        </article>
+        <article class="car-card" data-category="sport">
+          <img
+            src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80"
+            alt="Chevrolet Camaro"
+          />
+          <div class="car-info">
+            <div>
+              <h2>Chevrolet Camaro</h2>
+              <p class="muted">Automatik · Benzinë · 4 ulëse</p>
+            </div>
+            <strong>65€ <small>/ ditë</small></strong>
+          </div>
+          <button
+            class="btn btn-primary full book-car"
+            onclick="rezervoMakinen('camaro')"
+          >
+            Rezervo
+          </button>
+        </article>
+        <article class="car-card" data-category="suv">
+          <img
+            src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80"
+            alt="SUV i zi"
+          />
+          <div class="car-info">
+            <div>
+              <h2>Volkswagen Tiguan</h2>
+              <p class="muted">Manual · Naftë · 5 ulëse</p>
+            </div>
+            <strong>45€ <small>/ ditë</small></strong>
+          </div>
+          <button
+            class="btn btn-primary full book-car"
+            onclick="rezervoMakinen('tiguan')"
+          >
+            Rezervo
+          </button>
+        </article>
+        <article class="car-card" data-category="sedan">
+          <img
+            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80"
+            alt="BMW e bardhë"
+          />
+          <div class="car-info">
+            <div>
+              <h2>BMW Seria 5</h2>
+              <p class="muted">Automatik · Naftë · 5 ulëse</p>
+            </div>
+            <strong>60€ <small>/ ditë</small></strong>
+          </div>
+          <button
+            class="btn btn-primary full book-car"
+            onclick="rezervoMakinen('bmw5')"
+          >
+            Rezervo
+          </button>
+        </article>
+      </section>
+      <p class="form-message" id="cars-message" role="status"></p>
+    </main>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html">Rent<span>Drive</span></a>
+          <p>
+            Udhëtime më të lehta fillojnë me makinën e duhur. Zgjedh veturën,
+            cakto datat dhe bëhu gati për rrugë.
+          </p>
+          <div class="footer-social">
+            <span>Facebook</span><span>Instagram</span>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Linket</h3>
+          <a href="index.html">Ballina</a>
+          <a class="active" href="veturat.html">Makinat</a>
+          <a href="rrethnesh.html">Rreth Nesh</a>
+          <a href="kontakt.html">Kontakti</a>
+        </div>
+        <div class="footer-column">
+          <h3>Llogaria</h3>
+          <a href="login.html">Kyçu</a>
+          <a href="register.html">Regjistrohu</a>
+          <a href="makinat.html">Rezervo një makinë</a>
+        </div>
+        <div class="footer-column footer-contact">
+          <h3>Na kontakto</h3>
+          <p>Prishtinë, Kosovë</p>
+          <p>+383 44 000 000</p>
+          <p>info@rentdrive.example</p>
+          <span class="footer-hours">E hënë – E shtunë · 08:00–18:00</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
